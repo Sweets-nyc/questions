@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipped Sweets NYC - Follow-Up Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins (for headings), Inter (for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles matching Dipped Sweets NYC website aesthetic */
+        body {
+            font-family: 'Inter', sans-serif; /* Body font from your website */
+            background-color: #FFF8F0; /* Creamy white from your website */
+            color: #333333; /* Dark grey from your website */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif; /* Heading font from your website */
+        }
+        .container {
+            background-color: #FFFFFF; /* Clean white background */
+            border-radius: 2rem; /* Matches sweet-card and header/footer radius */
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08); /* Matches sweet-card shadow */
+            padding: 40px;
+            max-width: 850px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid #F8E6DD; /* Light peach border from header-bg */
+        }
+        h1.main-title { /* Specific class for the main title to apply Poppins font */
+            color: #6F4E37; /* Chocolate Brown from your website */
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: #8A6F5C; /* Lighter chocolate from your hero tagline */
+            margin-top: -15px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 25px;
+            color: #333333; /* Dark grey from your website body text */
+            line-height: 1.6;
+        }
+        li strong {
+            color: #6F4E37; /* Chocolate Brown for section titles */
+            font-size: 1.3em;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+        ul ul { /* Nested lists for sub-questions/options */
+            list-style: disc;
+            padding-left: 30px;
+            margin-top: 10px;
+        }
+        ul ul li {
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #4a4a4a; /* Slightly lighter for sub-text */
+        }
+        ul ul ul { /* Further nested list for packaging options */
+            list-style: circle;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        ul ul ul li {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            color: #5a5a5a;
+        }
+        /* Print button specific styles */
+        .print-button {
+            background-color: #F8A4B8; /* Soft Pink from your CTA button */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            margin-top: 30px;
+            display: block; /* Make it a block element */
+            margin-left: auto; /* Center the button */
+            margin-right: auto; /* Center the button */
+        }
+        .print-button:hover {
+            background-color: #E28FA0; /* Darker Pink on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Hide print button when printing */
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Dipped Sweets NYC</h1>
+        <p class="subtitle">Follow-Up Details for Our Partnership</p>
+
+        <ul>
+            <li>
+                <strong>1. Delivery & On-Site Logistics</strong>
+                <ul>
+                    <li>"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
+                    <li>"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
+                    <li>"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>2. Packaging Preferences</strong>
+                <ul>
+                    <li>"Regarding how the treats will be packaged for delivery, we can offer a few options. We can deliver the individually wrapped Rice Crispy Treats, Cake Pops, and Gourmet Pretzel Rods:"
+                        <ul class="list-disc pl-8 mt-2">
+                            <li>"Neatly organized in **standard bulk bakery boxes** (ready for your team to arrange)."</li>
+                            <li>"In bulk boxes, but **including disposable serving trays** for easy transfer."</li>
+                            <li>"**Pre-arranged directly onto disposable catering trays** for the quickest placement."</li>
+                        </ul>
+                        "Which option works best for your team and the event setup?"
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>3. Access & Venue Information</strong>
+                <ul>
+                    <li>"What are the parking and access instructions for delivery vehicles at that time?"</li>
+                    <li>"Is there anything specific we need to know about venue access or security procedures for delivery personnel?"</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>4. Next Steps & Final Confirmation</strong>
+                <ul>
+                    <li>"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to the event?"</li>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="print-button" onclick="window.print()">Print This Document</button>
+    </div>
+</body>
+</html>
