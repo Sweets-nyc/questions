@@ -8,7 +8,7 @@
     <!-- Google Fonts - Poppins (for headings), Inter (for body) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles matching Dipped Sweets NYC website aesthetic */
+        /* Custom styles matching Dipped Sweets NYC website aesthetic (On-screen view) */
         body {
             font-family: 'Inter', sans-serif; /* Body font from your website */
             background-color: #FFF8F0; /* Creamy white from your website */
@@ -174,7 +174,7 @@
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
 
-        /* Print-specific adjustments for a natural flow across two pages */
+        /* Print-specific adjustments for a natural flow across two pages (compact) */
         @media print {
             html, body {
                 height: auto; /* Allow content to dictate height */
@@ -185,24 +185,24 @@
             .container {
                 box-shadow: none; /* Remove shadows for print */
                 border: none; /* Remove borders for print */
-                padding: 15mm; /* Consistent margins for print */
+                padding: 10mm; /* More compact margins for print */
                 max-width: 100%; /* Use full available width */
                 width: 100%;
                 display: block; /* Allow natural flow */
             }
             h1.main-title {
-                font-size: 2.2rem; /* Adjusted for print readability */
-                margin-bottom: 12mm;
+                font-size: 1.8rem; /* Smaller for print */
+                margin-bottom: 8mm; /* More compact margin */
             }
             .subtitle {
-                font-size: 1.1rem; /* Adjusted for print readability */
-                margin-bottom: 15mm;
+                font-size: 0.9rem; /* Smaller for print */
+                margin-bottom: 10mm; /* More compact margin */
             }
             ul {
-                margin-bottom: 8mm; /* Space after main ul */
+                margin-bottom: 5mm; /* More compact margin */
             }
             li {
-                margin-bottom: 12mm;
+                margin-bottom: 8mm; /* More compact margin */
                 page-break-inside: avoid; /* Crucial: prevent content within a li from breaking */
             }
             /* Force a page break after the 'Packaging & Presentation' section */
@@ -210,47 +210,47 @@
                 page-break-after: always;
             }
             li strong {
-                font-size: 1.2em;
-                margin-bottom: 6mm;
+                font-size: 1.05em; /* Smaller for print */
+                margin-bottom: 4mm; /* More compact margin */
                 border-bottom: none;
             }
             ul li ul {
-                padding: 8mm 8mm 8mm 15mm;
-                margin-top: 8mm;
+                padding: 4mm 4mm 4mm 8mm; /* More compact padding */
+                margin-top: 4mm; /* More compact margin */
                 background-color: #FDFBF8;
                 border: 1px solid #F8E6DD;
             }
             ul li ul li {
-                font-size: 0.95em;
-                margin-bottom: 4mm;
+                font-size: 0.8em; /* Smaller for print */
+                margin-bottom: 2mm; /* More compact margin */
             }
             ul li ul li:last-child {
                 margin-bottom: 0;
             }
             .section-divider {
-                margin: 20mm 0;
+                margin: 10mm 0; /* More compact margin */
                 page-break-before: auto;
                 page-break-after: auto;
             }
             .packaging-option {
-                padding: 12mm;
-                margin-bottom: 12mm;
+                padding: 8mm; /* More compact padding */
+                margin-bottom: 8mm; /* More compact margin */
                 page-break-inside: avoid; /* Ensure packaging options stay together */
             }
             .packaging-option strong {
-                font-size: 1.1em;
-                margin-bottom: 6mm;
+                font-size: 0.9em; /* Smaller for print */
+                margin-bottom: 4mm; /* More compact margin */
             }
             .packaging-option p {
-                margin-bottom: 6mm;
+                margin-bottom: 4mm; /* More compact margin */
             }
             .packaging-images {
-                gap: 6mm;
-                margin-top: 6mm;
+                gap: 4mm; /* More compact gap */
+                margin-top: 4mm; /* More compact margin */
             }
             .packaging-images img {
-                flex-basis: 100px;
-                max-width: 150px;
+                flex-basis: 70px; /* Smaller for print */
+                max-width: 100px; /* Smaller for print */
                 box-shadow: none;
             }
             .print-button {
