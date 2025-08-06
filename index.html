@@ -173,10 +173,14 @@
             background-color: #E28FA0;
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
-        /* Print-specific styles to hide the print button */
+        /* Print-specific styles to hide the print button and remove shadows */
         @media print {
             .print-button {
                 display: none; /* Hide print button when printing */
+            }
+            .container,
+            .packaging-images img {
+                box-shadow: none; /* Remove shadows for print */
             }
         }
     </style>
@@ -192,7 +196,7 @@
                 <ul>
                     <li contenteditable="true">"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
                     <li contenteditable="true">"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
-                    <li contenteditable="true">"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
+                    <li contenteditable="true">"Will you need any quick assistance setting them up once they're delivered, or or will your team handle the full display arrangement?"</li>
                     <li contenteditable="true">"Will there be a table or display stands for us to use, or do we need to bring our own?"</li>
                 </ul>
             </li>
