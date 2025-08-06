@@ -174,7 +174,7 @@
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
 
-        /* Print-specific adjustments for a natural flow (less aggressive sizing) */
+        /* Print-specific adjustments for a natural flow on 2 pages */
         @media print {
             html, body {
                 height: auto;
@@ -203,7 +203,12 @@
             }
             li {
                 margin-bottom: 12mm;
-                page-break-inside: avoid;
+                /* This is the key to controlling breaks: */
+                page-break-inside: avoid; /* Prevent content within a li from breaking */
+            }
+            /* Force a page break after the 'Packaging & Presentation' section */
+            li:nth-of-type(2) { /* This targets the second <li>, which is 'Packaging & Presentation' */
+                page-break-after: always;
             }
             li strong {
                 font-size: 1.2em;
@@ -231,7 +236,7 @@
             .packaging-option {
                 padding: 12mm;
                 margin-bottom: 12mm;
-                page-break-inside: avoid;
+                page-break-inside: avoid; /* Ensure packaging options stay together */
             }
             .packaging-option strong {
                 font-size: 1.1em;
