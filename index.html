@@ -67,25 +67,69 @@
             margin-bottom: 8px;
         }
         ul ul { /* Nested lists for sub-questions/options */
-            list-style: disc;
-            padding-left: 30px;
+            list-style: none; /* Removed disc to control spacing better with Tailwind */
+            padding-left: 0;
             margin-top: 10px;
         }
         ul ul li {
             margin-bottom: 10px;
             font-size: 1em;
             color: #4a4a4a; /* Slightly lighter for sub-text */
+            padding-left: 20px; /* Indent for readability */
+            position: relative;
+        }
+        ul ul li::before { /* Custom bullet point */
+            content: "•";
+            color: #F8A4B8; /* Pink bullet */
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         ul ul ul { /* Further nested list for packaging options */
-            list-style: circle;
-            padding-left: 20px;
+            list-style: none; /* Removed circle to control spacing better with Tailwind */
+            padding-left: 0;
             margin-top: 5px;
         }
         ul ul ul li {
             font-size: 0.95em;
-            margin-bottom: 5px;
+            margin-bottom: 10px; /* Increased margin for spacing */
             color: #5a5a5a;
+            padding-left: 20px; /* Indent for readability */
+            position: relative;
         }
+        ul ul ul li::before { /* Custom bullet point for nested options */
+            content: "-";
+            color: #8A6F5C; /* Lighter chocolate dash */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .packaging-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px; /* Space between options */
+            padding: 10px;
+            border: 1px solid #F8E6DD;
+            border-radius: 0.75rem;
+            background-color: #fdfcfb;
+        }
+        .packaging-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between images */
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+        }
+        .packaging-option img {
+            width: 150px; /* Fixed width for images */
+            height: 100px; /* Fixed height for images */
+            object-fit: contain; /* Ensures image content is visible */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
         /* Print button specific styles */
         .print-button {
             background-color: #F8A4B8; /* Soft Pink from your CTA button */
@@ -121,42 +165,71 @@
         <h1 class="main-title">Dipped Sweets NYC</h1>
         <p class="subtitle">Follow-Up Details for Our Partnership</p>
 
-        <ul>
+        <ul class="space-y-6">
             <li>
                 <strong>1. Delivery & On-Site Logistics</strong>
-                <ul>
+                <ul class="mt-4 space-y-3">
                     <li>"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
                     <li>"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
                     <li>"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
+                    <li>"Will there be a table or display stands for us to use, or do we need to bring our own?"</li>
                 </ul>
             </li>
 
             <li>
-                <strong>2. Packaging Preferences</strong>
-                <ul>
-                    <li>"Regarding how the treats will be packaged for delivery, we can offer a few options. We can deliver the individually wrapped Rice Crispy Treats, Cake Pops, and Gourmet Pretzel Rods:"
-                        <ul class="list-disc pl-8 mt-2">
-                            <li>"Neatly organized in **standard bulk bakery boxes** (ready for your team to arrange)."</li>
-                            <li>"In bulk boxes, but **including disposable serving trays** for easy transfer."</li>
-                            <li>"**Pre-arranged directly onto disposable catering trays** for the quickest placement."</li>
+                <strong>2. Packaging & Presentation</strong>
+                <ul class="mt-4 space-y-3">
+                    <li>"Regarding how the treats will be packaged for delivery, we can offer a few options for the individually wrapped Rice Crispy Treats, Cake Pops, and Gourmet Pretzel Rods:"
+                        <ul class="mt-4 space-y-4">
+                            <li class="packaging-option">
+                                <div class="packaging-images">
+                                    <img src="https://www.papermart.com/images/products/26002_main_20220615104438.jpg" alt="Plain Bulk Bakery Box" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Plain+Bulk+Box';">
+                                </div>
+                                "A. **Plain Bulk Boxes:** Treats are securely packed in simple, unadorned cardboard boxes, ideal for efficient transport. Your team would then arrange them for display at the venue."
+                            </li>
+                            <li class="packaging-option">
+                                <div class="packaging-images">
+                                    <img src="https://www.webstaurantstore.com/images/products/main/56499/24577363/choice-21-x-13-x-4-deep-full-pan-corrugated-catering-box.jpg" alt="Bulk Box with Internal Trays 1" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Box+with+Trays+1';">
+                                    <img src="https://www.packnwood.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/210woodtray39.jpg" alt="Bulk Box with Internal Trays 2" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Box+with+Trays+2';">
+                                </div>
+                                "B. **Bulk Boxes with Internal Trays:** Treats are delivered in bulk boxes, but include disposable serving trays inside that can be easily lifted out and placed directly onto your display area."
+                            </li>
+                            <li class="packaging-option">
+                                <div class="packaging-images">
+                                    <img src="https://www.sugarplumbakery.org/wp-content/uploads/2021/08/cookie-large.jpg" alt="Pre-arranged Catering Tray" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Pre-arranged+Tray';">
+                                </div>
+                                "C. **Pre-arranged Catering Trays:** Treats are artfully arranged on disposable catering trays, ready for immediate placement on your dessert table, requiring no additional setup from your team."
+                            </li>
+                            <li class="packaging-option">
+                                <div class="packaging-images">
+                                    <img src="https://www.brpboxshop.com/images/product/detail/3389_main_20220615104438.jpg" alt="Windowed Display Box 1" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Windowed+Display+Box+1';">
+                                    <img src="https://i.etsystatic.com/15233156/r/il/649e29/2583842183/il_fullxfull.2583842183_1o31.jpg" alt="Windowed Display Box 2" onerror="this.onerror=null;this.src='https://placehold.co/150x100/F8E6DD/6F4E37?text=Windowed+Display+Box+2';">
+                                </div>
+                                "D. **Windowed Display Boxes:** Treats are presented in attractive boxes featuring a clear window, designed to be placed directly on your dessert table as part of the overall display."
+                            </li>
                         </ul>
-                        "Which option works best for your team and the event setup?"
+                        <p class="mt-4 pl-5 text-gray-700">"Which option works best for your team and the event setup?"</p>
                     </li>
+                    <li>"What is the color scheme or theme of the event?"</li>
+                    <li>"Will our treats be the sole dessert, or will they be part of a larger dessert table?"</li>
+                    <li>"Do we need to provide any labels for the different treats?"</li>
                 </ul>
             </li>
 
             <li>
-                <strong>3. Access & Venue Information</strong>
-                <ul>
+                <strong>3. Venue & Access Details</strong>
+                <ul class="mt-4 space-y-3">
                     <li>"What are the parking and access instructions for delivery vehicles at that time?"</li>
                     <li>"Is there anything specific we need to know about venue access or security procedures for delivery personnel?"</li>
+                    <li>"Will there be on-site refrigeration available for us to use?"</li>
                 </ul>
             </li>
 
             <li>
-                <strong>4. Next Steps & Final Confirmation</strong>
-                <ul>
-                    <li>"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to the event?"</li>
+                <strong>4. Event Timeline & Final Communication</strong>
+                <ul class="mt-4 space-y-3">
+                    <li>"Can you provide a high-level timeline for the event (e.g., when doors open, when dessert course is planned)?"</li>
+                    <li>"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to and on the day of the event?"</li>
                 </ul>
             </li>
         </ul>
