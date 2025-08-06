@@ -174,84 +174,85 @@
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
 
-        /* Print-specific adjustments for a natural flow on 2 pages */
+        /* Print-specific adjustments for a single page */
         @media print {
             html, body {
-                height: auto;
+                height: 100%; /* Set height for single page */
                 margin: 0;
                 padding: 0;
-                overflow: visible;
+                overflow: hidden; /* Prevent scrolling */
             }
             .container {
                 box-shadow: none;
                 border: none;
-                padding: 15mm; /* Consistent margins for print */
+                padding: 10mm; /* Reduced padding for print */
                 max-width: 100%;
-                width: 100%;
-                display: block;
+                height: 100%; /* Use full height for print */
+                display: flex; /* Use flex to distribute content vertically */
+                flex-direction: column;
+                justify-content: space-between; /* Distribute content evenly */
             }
             h1.main-title {
-                font-size: 2.2rem; /* Adjusted for print readability */
-                margin-bottom: 12mm;
+                font-size: 1.8rem; /* Significantly smaller for single page */
+                margin-bottom: 8mm; /* Reduced margin */
             }
             .subtitle {
-                font-size: 1.1rem; /* Adjusted for print readability */
-                margin-bottom: 15mm;
+                font-size: 0.9rem; /* Significantly smaller for single page */
+                margin-bottom: 10mm; /* Reduced margin */
             }
             ul {
-                margin-bottom: 8mm;
+                margin-bottom: 5mm; /* Reduced margin */
             }
             li {
-                margin-bottom: 12mm;
-                /* This is the key to controlling breaks: */
-                page-break-inside: avoid; /* Prevent content within a li from breaking */
+                margin-bottom: 8mm; /* Reduced margin */
+                page-break-inside: avoid; /* Prevent breaking */
             }
-            /* Force a page break after the 'Packaging & Presentation' section */
-            li:nth-of-type(2) { /* This targets the second <li>, which is 'Packaging & Presentation' */
-                page-break-after: always;
+            /* Remove forced page break after 'Packaging & Presentation' */
+            li:nth-of-type(2) {
+                page-break-after: auto;
             }
             li strong {
-                font-size: 1.2em;
-                margin-bottom: 6mm;
+                font-size: 1.05em; /* Reduced font size */
+                margin-bottom: 4mm; /* Reduced margin */
                 border-bottom: none;
             }
             ul li ul {
-                padding: 8mm 8mm 8mm 15mm;
-                margin-top: 8mm;
+                padding: 5mm 5mm 5mm 10mm; /* Reduced padding */
+                margin-top: 5mm; /* Reduced margin */
                 background-color: #FDFBF8;
                 border: 1px solid #F8E6DD;
             }
             ul li ul li {
-                font-size: 0.95em;
-                margin-bottom: 4mm;
+                font-size: 0.85em; /* Reduced font size */
+                margin-bottom: 2mm; /* Reduced margin */
             }
             ul li ul li:last-child {
                 margin-bottom: 0;
             }
             .section-divider {
-                margin: 20mm 0;
+                margin: 10mm 0; /* Reduced margin */
                 page-break-before: auto;
                 page-break-after: auto;
             }
             .packaging-option {
-                padding: 12mm;
-                margin-bottom: 12mm;
-                page-break-inside: avoid; /* Ensure packaging options stay together */
+                padding: 8mm; /* Reduced padding */
+                margin-bottom: 8mm; /* Reduced margin */
+                page-break-inside: avoid;
             }
             .packaging-option strong {
-                font-size: 1.1em;
-                margin-bottom: 6mm;
+                font-size: 0.95em; /* Reduced font size */
+                margin-bottom: 4mm; /* Reduced margin */
             }
             .packaging-option p {
-                margin-bottom: 6mm;
+                margin-bottom: 4mm; /* Reduced margin */
             }
             .packaging-images {
-                gap: 6mm;
-                margin-top: 6mm;
+                gap: 4mm; /* Reduced gap */
+                margin-top: 4mm; /* Reduced margin */
             }
             .packaging-images img {
-                flex-basis: 100px;
-                max-width: 150px;
+                flex-basis: 70px; /* Significantly reduced base for print */
+                max-width: 100px; /* Significantly reduced max for print */
                 box-shadow: none;
             }
             .print-button {
