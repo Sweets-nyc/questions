@@ -179,80 +179,80 @@
         /* Print-specific adjustments to fit on two pages */
         @media print {
             html, body {
-                height: auto; /* Allow height to expand */
+                height: auto;
                 margin: 0;
                 padding: 0;
-                overflow: visible; /* Allow content to flow */
+                overflow: visible;
             }
             .container {
                 box-shadow: none;
                 border: none;
-                padding: 15mm; /* Use physical units for print */
+                padding: 10mm; /* Further reduced padding for print */
                 max-width: 100%;
                 width: 100%;
-                display: block; /* Revert to block for natural flow */
+                display: block;
             }
             h1.main-title {
-                font-size: 2.2rem; /* Slightly larger for two pages */
-                margin-bottom: 15mm;
+                font-size: 1.8rem; /* Further reduced font size for print */
+                margin-bottom: 10mm; /* Reduced margin */
             }
             .subtitle {
-                font-size: 1.1rem; /* Slightly larger for two pages */
-                margin-bottom: 15mm;
+                font-size: 0.95rem; /* Further reduced font size for print */
+                margin-bottom: 10mm; /* Reduced margin */
             }
             ul {
-                margin-bottom: 10mm; /* Space after main ul */
+                margin-bottom: 5mm; /* Reduced space after main ul */
             }
             li {
-                margin-bottom: 10mm; /* More space between main sections */
-                page-break-inside: avoid; /* Crucial: prevent main sections from splitting */
+                margin-bottom: 8mm; /* Reduced space between main sections */
+                page-break-inside: avoid;
             }
             li strong {
-                font-size: 1.2em; /* Adjusted for two pages */
-                margin-bottom: 5mm;
+                font-size: 1.1em; /* Further reduced font size for print */
+                margin-bottom: 4mm; /* Reduced margin */
                 border-bottom: none;
             }
             ul li ul { /* Targeting the question lists for print */
-                padding: 5mm 5mm 5mm 10mm; /* Adjusted padding for print */
-                margin-top: 5mm;
-                background-color: #FDFBF8; /* Keep background for clarity */
-                border: 1px solid #F8E6DD; /* Keep border for clarity */
+                padding: 4mm 4mm 4mm 8mm; /* Further reduced padding for print */
+                margin-top: 4mm; /* Reduced margin */
+                background-color: #FDFBF8;
+                border: 1px solid #F8E6DD;
             }
             ul li ul li {
-                font-size: 0.95em; /* Adjusted for two pages */
-                margin-bottom: 3mm; /* Tighter spacing for print */
+                font-size: 0.85em; /* Further reduced font size for print */
+                margin-bottom: 2mm; /* Further reduced margin */
             }
             ul li ul li:last-child {
                 margin-bottom: 0;
             }
             .section-divider {
-                margin: 15mm 0; /* More space around dividers for better breaks */
-                page-break-before: auto; /* Allow breaks before if needed */
-                page-break-after: auto; /* Allow breaks after if needed */
+                margin: 10mm 0; /* Further reduced space around dividers for print */
+                page-break-before: auto;
+                page-break-after: auto;
             }
             .packaging-option {
-                padding: 10mm;
-                margin-bottom: 10mm;
-                page-break-inside: avoid; /* Crucial: prevent packaging options from splitting */
+                padding: 8mm; /* Further reduced padding for print */
+                margin-bottom: 8mm; /* Further reduced margin */
+                page-break-inside: avoid;
             }
             .packaging-option strong {
-                font-size: 1.1em;
-                margin-bottom: 5mm;
+                font-size: 1em; /* Further reduced font size for print */
+                margin-bottom: 4mm; /* Reduced margin */
             }
             .packaging-option p {
-                margin-bottom: 5mm;
+                margin-bottom: 4mm; /* Reduced margin */
             }
             .packaging-images {
-                gap: 5mm;
-                margin-top: 5mm;
+                gap: 4mm; /* Further reduced gap for print */
+                margin-top: 4mm; /* Reduced margin */
             }
             .packaging-images img {
-                flex-basis: 100px; /* Smaller base for print */
-                max-width: 150px; /* Smaller max for print */
+                flex-basis: 80px; /* Further reduced base for print */
+                max-width: 120px; /* Further reduced max for print */
                 box-shadow: none;
             }
             .print-button {
-                display: none; /* Hide print button when printing */
+                display: none;
             }
         }
     </style>
@@ -340,3 +340,4 @@
     </div>
 </body>
 </html>
+
