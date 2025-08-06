@@ -60,6 +60,8 @@
             margin-bottom: 25px;
             color: #333333;
             line-height: 1.6;
+            /* Ensure main list items (sections) don't break across pages */
+            page-break-inside: avoid;
         }
         li strong {
             color: #6F4E37;
@@ -89,6 +91,12 @@
             font-size: 0.98em;
             color: #4a4a4a;
             line-height: 1.5;
+            /* Make these list items editable */
+            outline: none; /* Remove default focus outline */
+        }
+        ul li ul li:focus {
+            box-shadow: 0 0 0 2px #F8A4B8; /* Add a subtle pink focus outline */
+            border-radius: 4px; /* Match border-radius of the container */
         }
         ul li ul li:last-child {
             margin-bottom: 0;
@@ -105,6 +113,8 @@
             padding: 20px;
             margin-bottom: 20px;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            /* Ensure packaging options don't break across pages */
+            page-break-inside: avoid;
         }
         .packaging-option:hover {
             transform: translateY(-3px);
@@ -166,73 +176,83 @@
             transform: translateY(-3px);
         }
 
-        /* Print-specific adjustments to fit on one page */
+        /* Print-specific adjustments to fit on two pages */
         @media print {
             html, body {
-                height: 100%;
+                height: auto; /* Allow height to expand */
                 margin: 0;
                 padding: 0;
-                overflow: hidden;
+                overflow: visible; /* Allow content to flow */
             }
             .container {
                 box-shadow: none;
                 border: none;
-                padding: 15px;
+                padding: 15mm; /* Use physical units for print */
                 max-width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                width: 100%;
+                display: block; /* Revert to block for natural flow */
             }
             h1.main-title {
-                font-size: 2rem;
-                margin-bottom: 15px;
+                font-size: 2.2rem; /* Slightly larger for two pages */
+                margin-bottom: 15mm;
             }
             .subtitle {
-                font-size: 1rem;
-                margin-bottom: 25px;
+                font-size: 1.1rem; /* Slightly larger for two pages */
+                margin-bottom: 15mm;
+            }
+            ul {
+                margin-bottom: 10mm; /* Space after main ul */
             }
             li {
-                margin-bottom: 15px;
+                margin-bottom: 10mm; /* More space between main sections */
+                page-break-inside: avoid; /* Crucial: prevent main sections from splitting */
             }
             li strong {
-                font-size: 1.1em;
-                margin-bottom: 8px;
+                font-size: 1.2em; /* Adjusted for two pages */
+                margin-bottom: 5mm;
                 border-bottom: none;
             }
             ul li ul { /* Targeting the question lists for print */
-                padding: 10px 15px 5px 20px;
-                margin-top: 8px;
+                padding: 5mm 5mm 5mm 10mm; /* Adjusted padding for print */
+                margin-top: 5mm;
+                background-color: #FDFBF8; /* Keep background for clarity */
+                border: 1px solid #F8E6DD; /* Keep border for clarity */
             }
             ul li ul li {
-                font-size: 0.9em;
-                margin-bottom: 5px;
+                font-size: 0.95em; /* Adjusted for two pages */
+                margin-bottom: 3mm; /* Tighter spacing for print */
+            }
+            ul li ul li:last-child {
+                margin-bottom: 0;
             }
             .section-divider {
-                margin: 25px 0;
+                margin: 15mm 0; /* More space around dividers for better breaks */
+                page-break-before: auto; /* Allow breaks before if needed */
+                page-break-after: auto; /* Allow breaks after if needed */
             }
             .packaging-option {
-                padding: 15px;
-                margin-bottom: 15px;
+                padding: 10mm;
+                margin-bottom: 10mm;
+                page-break-inside: avoid; /* Crucial: prevent packaging options from splitting */
             }
             .packaging-option strong {
-                font-size: 1.05em;
-                margin-bottom: 10px;
+                font-size: 1.1em;
+                margin-bottom: 5mm;
             }
             .packaging-option p {
-                margin-bottom: 0.5rem;
+                margin-bottom: 5mm;
             }
             .packaging-images {
-                gap: 0.5rem;
-                margin-top: 0.5rem;
+                gap: 5mm;
+                margin-top: 5mm;
             }
             .packaging-images img {
-                flex-basis: 120px;
-                max-width: 180px;
+                flex-basis: 100px; /* Smaller base for print */
+                max-width: 150px; /* Smaller max for print */
                 box-shadow: none;
             }
             .print-button {
-                display: none;
+                display: none; /* Hide print button when printing */
             }
         }
     </style>
@@ -246,10 +266,10 @@
             <li>
                 <strong>1. Delivery & On-Site Logistics</strong>
                 <ul>
-                    <li>"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
-                    <li>"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
-                    <li>"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
-                    <li>"Will there be a table or display stands for us to use, or do we need to bring our own?"</li>
+                    <li contenteditable="true">"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
+                    <li contenteditable="true">"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
+                    <li contenteditable="true">"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
+                    <li contenteditable="true">"Will there be a table or display stands for us to use, or do we need to bring our own?"</li>
                 </ul>
             </li>
 
@@ -288,9 +308,9 @@
                 </ul>
                 <p class="mt-4">Which option works best for your team and the event setup?</p>
                 <ul>
-                    <li>"What is the color scheme or theme of the event?"</li>
-                    <li>"Will our treats be the sole dessert, or will they be part of a larger dessert table?"</li>
-                    <li>"Do we need to provide any labels for the different treats?"</li>
+                    <li contenteditable="true">"What is the color scheme or theme of the event?"</li>
+                    <li contenteditable="true">"Will our treats be the sole dessert, or will they be part of a larger dessert table?"</li>
+                    <li contenteditable="true">"Do we need to provide any labels for the different treats?"</li>
                 </ul>
             </li>
 
@@ -299,9 +319,9 @@
             <li>
                 <strong>3. Venue & Access Details</strong>
                 <ul>
-                    <li>"What are the parking and access instructions for delivery vehicles at that time?"</li>
-                    <li>"Is there anything specific we need to know about venue access or security procedures for delivery personnel?"</li>
-                    <li>"Will there be on-site refrigeration available for us to use?"</li>
+                    <li contenteditable="true">"What are the parking and access instructions for delivery vehicles at that time?"</li>
+                    <li contenteditable="true">"Is there anything specific we need to know about venue access or security procedures for delivery personnel?"</li>
+                    <li contenteditable="true">"Will there be on-site refrigeration available for us to use?"</li>
                 </ul>
             </li>
 
@@ -310,8 +330,8 @@
             <li>
                 <strong>4. Event Timeline & Final Confirmation</strong>
                 <ul>
-                    <li>"Can you provide a high-level timeline for the event (e.g., when doors open, when dessert course is planned)?"</li>
-                    <li>"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to and on the day of the event?"</li>
+                    <li contenteditable="true">"Can you provide a high-level timeline for the event (e.g., when doors open, when dessert course is planned)?"</li>
+                    <li contenteditable="true">"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to and on the day of the event?"</li>
                 </ul>
             </li>
         </ul>
