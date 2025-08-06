@@ -22,7 +22,347 @@
             box-sizing: border-box;
         }
         h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif; /* Heading font from your website */<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipped Sweets NYC - Follow-Up Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins (for headings), Inter (for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles matching Dipped Sweets NYC website aesthetic */
+        body {
+            font-family: 'Inter', sans-serif; /* Body font from your website */
+            background-color: #FFF8F0; /* Creamy white from your website */
+            color: #333333; /* Dark grey from your website */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Restored padding for comfortable on-screen view */
+            box-sizing: border-box;
+        }
+        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif; /* Heading font from your website */
+        }
+        .container {
+            background-color: #FFFFFF;
+            border-radius: 2.75rem; /* Restored larger border-radius */
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12); /* Restored deeper shadow */
+            padding: 50px; /* Restored generous padding */
+            max-width: 880px; /* Restored wider max-width */
+            width: 100%;
+            text-align: left;
+            border: 1px solid #F8E6DD;
+        }
+        h1.main-title {
+            color: #6F4E37;
+            margin-bottom: 30px; /* Restored margin */
+            text-align: center;
+            font-size: 3rem; /* Restored larger font size */
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+        .subtitle {
+            color: #8A6F5C;
+            margin-top: -15px;
+            margin-bottom: 50px; /* Restored generous margin */
+            text-align: center;
+            font-size: 1.35rem; /* Restored larger font size */
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 35px; /* Restored generous margin */
+            color: #333333;
+            line-height: 1.7; /* Restored optimized line height */
+            page-break-inside: avoid; /* Keep main sections together on print */
+        }
+        li strong {
+            color: #6F4E37;
+            font-size: 1.45em; /* Restored larger font size */
+            font-weight: 700;
+            display: block;
+            margin-bottom: 15px; /* Restored generous margin */
+            padding-bottom: 5px;
+            border-bottom: 1px solid #F8E6DD;
+        }
+        /* Styles for the actual questions (nested lists) */
+        ul li ul {
+            list-style: disc; /* Bullet points for questions */
+            padding-left: 25px;
+            margin-top: 15px; /* Restored generous margin */
+            background-color: #FDFBF8;
+            border-radius: 0.75rem;
+            padding: 15px 20px 10px 25px;
+            border: 1px solid #F8E6DD;
+        }
+        /* Color the bullet points */
+        ul li ul li::marker {
+            color: #F8A4B8; /* Soft Pink color from the button */
+        }
+        ul li ul li {
+            margin-bottom: 12px; /* Restored spacing */
+            font-size: 1.05em; /* Restored font size */
+            color: #4a4a4a;
+            line-height: 1.6;
+            contenteditable="true"; /* Keep editable */
+            outline: none; /* Remove default focus outline */
+        }
+        ul li ul li:focus {
+            box-shadow: 0 0 0 2px #F8A4B8; /* Add a subtle pink focus outline */
+            border-radius: 4px; /* Match border-radius of the container */
+        }
+        ul li ul li:last-child {
+            margin-bottom: 0;
+        }
+        .section-divider {
+            border-top: 1px solid #F8E6DD;
+            margin: 50px 0; /* Restored generous margin */
+        }
+        .packaging-option {
+            list-style: none; /* Explicitly remove bullet points for packaging options */
+            background-color: #FDFBF8;
+            border: 1px solid #F8E6DD;
+            border-radius: 1.25rem; /* Restored larger border-radius */
+            padding: 25px; /* Restored generous padding */
+            margin-bottom: 25px; /* Restored generous margin */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            page-break-inside: avoid; /* Keep packaging options together on print */
+        }
+        .packaging-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            background-color: #FCF9F6;
+        }
+        .packaging-option strong {
+            font-size: 1.3em; /* Restored larger font size */
+            margin-bottom: 15px; /* Restored generous margin */
+            border-bottom: none;
+        }
+        .packaging-option p {
+            margin-bottom: 1rem; /* Restored margin */
+            line-height: 1.5;
+        }
+        .packaging-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem; /* Restored larger gap */
+            margin-top: 1rem; /* Restored margin */
+            justify-content: center;
+        }
+        .packaging-images img {
+            border-radius: 0.85rem; /* Restored larger border-radius */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Restored clearer shadow */
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 200px; /* Restored larger base width */
+            max-width: 280px; /* Restored larger max-width */
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 5 / 3;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .packaging-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Print button specific styles */
+        .print-button {
+            background-color: #F8A4B8;
+            color: white;
+            padding: 16px 35px; /* Restored larger padding */
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.25rem; /* Restored larger font size */
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            margin-top: 50px; /* Restored generous margin */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .print-button:hover {
+            background-color: #E28FA0;
+            transform: translateY(-4px);
+        }
+
+        /* Print-specific adjustments for a natural two-page flow */
+        @media print {
+            html, body {
+                height: auto; /* Allow content to dictate height */
+                margin: 0;
+                padding: 0;
+                overflow: visible; /* Ensure all content is visible */
+            }
+            .container {
+                box-shadow: none; /* Remove shadows for print */
+                border: none; /* Remove borders for print */
+                padding: 15mm; /* Use physical units for consistent margins */
+                max-width: 100%; /* Use full available width */
+                width: 100%;
+                display: block; /* Allow natural flow */
+            }
+            h1.main-title {
+                font-size: 2.2rem; /* Adjusted for print readability */
+                margin-bottom: 12mm;
+            }
+            .subtitle {
+                font-size: 1.1rem; /* Adjusted for print readability */
+                margin-bottom: 15mm;
+            }
+            ul {
+                margin-bottom: 8mm; /* Space after main ul */
+            }
+            li {
+                margin-bottom: 12mm; /* Space between main sections */
+                page-break-inside: avoid; /* Crucial: prevent main sections from splitting */
+            }
+            li strong {
+                font-size: 1.2em; /* Adjusted for print readability */
+                margin-bottom: 6mm;
+                border-bottom: none;
+            }
+            ul li ul { /* Targeting the question lists for print */
+                padding: 8mm 8mm 8mm 15mm; /* Adjusted padding for bullet visibility */
+                margin-top: 8mm;
+                background-color: #FDFBF8; /* Keep background for clarity */
+                border: 1px solid #F8E6DD; /* Keep border for clarity */
+            }
+            ul li ul li {
+                font-size: 0.95em; /* Adjusted for print readability */
+                margin-bottom: 4mm; /* Tighter spacing for print */
+            }
+            ul li ul li:last-child {
+                margin-bottom: 0;
+            }
+            .section-divider {
+                margin: 20mm 0; /* Adjusted space around dividers for better breaks */
+                page-break-before: auto; /* Allow breaks before if needed */
+                page-break-after: auto; /* Allow breaks after if needed */
+            }
+            .packaging-option {
+                padding: 12mm; /* Adjusted padding for print */
+                margin-bottom: 12mm; /* Adjusted margin */
+                page-break-inside: avoid; /* Crucial: prevent packaging options from splitting */
+            }
+            .packaging-option strong {
+                font-size: 1.1em; /* Adjusted for print readability */
+                margin-bottom: 6mm;
+            }
+            .packaging-option p {
+                margin-bottom: 6mm;
+            }
+            .packaging-images {
+                gap: 6mm; /* Adjusted gap for print */
+                margin-top: 6mm;
+            }
+            .packaging-images img {
+                flex-basis: 100px; /* Adjusted base for print */
+                max-width: 150px; /* Adjusted max for print */
+                box-shadow: none; /* Remove shadow for print */
+            }
+            .print-button {
+                display: none; /* Hide print button when printing */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Dipped Sweets NYC</h1>
+        <p class="subtitle">Follow-Up Details for Our Partnership</p>
+
+        <ul>
+            <li>
+                <strong>1. Delivery & On-Site Logistics</strong>
+                <ul>
+                    <li contenteditable="true">"For delivery and drop-off on October 21st, who will be our primary on-site contact?"</li>
+                    <li contenteditable="true">"Where at the venue should we deliver the treats? Is there a specific loading dock, entrance, or a designated area to bring them directly to?"</li>
+                    <li contenteditable="true">"Will you need any quick assistance setting them up once they're delivered, or will your team handle the full display arrangement?"</li>
+                    <li contenteditable="true">"Will there be a table or display stands for us to use, or do we need to bring our own?"</li>
+                </ul>
+            </li>
+
+            <hr class="section-divider">
+
+            <li>
+                <strong>2. Packaging & Presentation</strong>
+                <p class="mb-4">Regarding how the treats will be packaged for delivery, we can offer a few options. We can deliver the individually wrapped Rice Crispy Treats, Cake Pops, and Gourmet Pretzel Rods:</p>
+                <ul>
+                    <li class="packaging-option">
+                        <strong>A. Plain Bulk Boxes:</strong> Treats are securely packed in simple, unadorned cardboard boxes, ideal for efficient transport. Your team would then arrange them for display at the venue.
+                        <div class="packaging-images">
+                            <img src="box.png" alt="Plain Bulk Box Example">
+                        </div>
+                    </li>
+                    <li class="packaging-option">
+                        <strong>B. Bulk Boxes with Internal Trays:</strong> Treats are delivered in bulk boxes, but include disposable serving trays inside that can be easily lifted out and placed directly onto your display area.
+                        <div class="packaging-images">
+                            <img src="box.png" alt="Bulk Box with Internal Tray Example 1">
+                            <img src="tray.jpg" alt="Bulk Box with Internal Tray Example 2">
+                        </div>
+                    </li>
+                    <li class="packaging-option">
+                        <strong>C. Pre-arranged Catering Trays:</strong> Treats are artfully arranged on disposable catering trays, ready for immediate placement on your dessert table, requiring no additional setup from your team.
+                        <div class="packaging-images">
+                            <img src="IMG_0718.png" alt="Pre-arranged Catering Tray Example">
+                        </div>
+                    </li>
+                    <li class="packaging-option">
+                        <strong>D. Windowed Display Boxes:</strong> Treats are presented in attractive boxes featuring a clear window, designed to be placed directly on your dessert table as part of the overall display.
+                        <div class="packaging-images">
+                            <img src="open.webp" alt="Windowed Display Box Example 1">
+                            <img src="closed .webp" alt="Windowed Display Box Example 2">
+                        </div>
+                    </li>
+                </ul>
+                <p class="mt-4">Which option works best for your team and the event setup?</p>
+                <ul>
+                    <li contenteditable="true">"What is the color scheme or theme of the event?"</li>
+                    <li contenteditable="true">"Will our treats be the sole dessert, or will they be part of a larger dessert table?"</li>
+                    <li contenteditable="true">"Do we need to provide any labels for the different treats?"</li>
+                </ul>
+            </li>
+
+            <hr class="section-divider">
+
+            <li>
+                <strong>3. Venue & Access Details</strong>
+                <ul>
+                    <li contenteditable="true">"What are the parking and access instructions for delivery vehicles at that time?"</li>
+                    <li contenteditable="true">"Is there anything specific we need to know about venue access or security procedures for delivery personnel?"</li>
+                    <li contenteditable="true">"Will there be on-site refrigeration available for us to use?"</li>
+                </ul>
+            </li>
+
+            <hr class="section-divider">
+
+            <li>
+                <strong>4. Event Timeline & Final Confirmation</strong>
+                <ul>
+                    <li contenteditable="true">"Can you provide a high-level timeline for the event (e.g., when doors open, when dessert course is planned)?"</li>
+                    <li contenteditable="true">"What are the next steps on your end, and what's the best way to communicate any last-minute logistical details leading up to and on the day of the event?"</li>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="print-button" onclick="window.print()">Print This Document</button>
+    </div>
+</body>
+</html>
+
         }
         .container {
             background-color: #FFFFFF;
