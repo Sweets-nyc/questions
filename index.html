@@ -97,9 +97,14 @@
         .packaging-images img {
             border-radius: 0.5rem; /* Rounded corners for images */
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow for images */
-            width: 200px; /* Fixed width for consistency */
-            height: 120px; /* Fixed height for consistency */
+            /* New responsive layout properties */
+            flex-grow: 1; /* Allows images to grow to fill space */
+            flex-shrink: 1; /* Allows images to shrink if needed */
+            flex-basis: 180px; /* A base width for each image before growing/shrinking */
+            max-width: 100%; /* Ensures images don't overflow their container */
+            height: auto; /* Maintains aspect ratio */
             object-fit: cover; /* Ensures images cover the area without distortion */
+            aspect-ratio: 5 / 3; /* Maintains a consistent aspect ratio (200px/120px) */
         }
 
         /* Print button specific styles */
@@ -155,27 +160,27 @@
                     <li class="packaging-option">
                         <strong>A. Plain Bulk Boxes:</strong> Treats are securely packed in simple, unadorned cardboard boxes, ideal for efficient transport. Your team would then arrange them for display at the venue.
                         <div class="packaging-images">
-                            <img src="box.png">
+                            <img src="box.png" alt="Plain Bulk Box Example">
                         </div>
                     </li>
                     <li class="packaging-option">
                         <strong>B. Bulk Boxes with Internal Trays:</strong> Treats are delivered in bulk boxes, but include disposable serving trays inside that can be easily lifted out and placed directly onto your display area.
                         <div class="packaging-images">
-                            <img src="box.png">
-                            <img src="tray.jpg">
+                            <img src="box.png" alt="Bulk Box with Internal Tray Example 1">
+                            <img src="tray.jpg" alt="Bulk Box with Internal Tray Example 2">
                         </div>
                     </li>
                     <li class="packaging-option">
                         <strong>C. Pre-arranged Catering Trays:</strong> Treats are artfully arranged on disposable catering trays, ready for immediate placement on your dessert table, requiring no additional setup from your team.
                         <div class="packaging-images">
-                            <img src="IMG_0718.png">
+                            <img src="IMG_0718.png" alt="Pre-arranged Catering Tray Example">
                         </div>
                     </li>
                     <li class="packaging-option">
                         <strong>D. Windowed Display Boxes:</strong> Treats are presented in attractive boxes featuring a clear window, designed to be placed directly on your dessert table as part of the overall display.
                         <div class="packaging-images">
-                            <img src="open.webp">
-                            <img src="closed .webp"> 
+                            <img src="open.webp" alt="Windowed Display Box Example 1">
+                            <img src="closed .webp" alt="Windowed Display Box Example 2">
                         </div>
                     </li>
                 </ul>
