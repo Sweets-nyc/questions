@@ -173,7 +173,12 @@
             background-color: #E28FA0;
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
-        /* Removed all @media print specific rules to revert to default browser print behavior */
+        /* Print-specific styles to hide the print button */
+        @media print {
+            .print-button {
+                display: none; /* Hide print button when printing */
+            }
+        }
     </style>
 </head>
 <body>
