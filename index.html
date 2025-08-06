@@ -60,7 +60,7 @@
             margin-bottom: 35px; /* More generous space between main list items */
             color: #333333;
             line-height: 1.7; /* Optimized line height for easy reading */
-            page-break-inside: avoid; /* Keep main sections together on print */
+            /* page-break-inside: avoid; Removed for default print behavior */
         }
         li strong {
             color: #6F4E37; /* Chocolate Brown for section titles */
@@ -112,7 +112,7 @@
             padding: 25px; /* More padding inside option boxes */
             margin-bottom: 25px; /* More space between option boxes */
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Smooth hover effect */
-            page-break-inside: avoid; /* Keep packaging options together on print */
+            /* page-break-inside: avoid; Removed for default print behavior */
         }
         .packaging-option:hover {
             transform: translateY(-5px); /* More pronounced lift effect on hover */
@@ -173,90 +173,7 @@
             background-color: #E28FA0;
             transform: translateY(-4px); /* More pronounced lift on hover */
         }
-
-        /* Print-specific adjustments for a natural flow across two pages (compact) */
-        @media print {
-            html, body {
-                height: auto; /* Allow content to dictate height */
-                margin: 0;
-                padding: 0;
-                overflow: visible; /* Ensure all content is visible */
-            }
-            .container {
-                box-shadow: none; /* Remove shadows for print */
-                border: none; /* Remove borders for print */
-                padding: 5mm; /* Significantly reduced padding for print */
-                max-width: 100%; /* Use full available width */
-                width: 100%;
-                display: block; /* Allow natural flow */
-            }
-            h1.main-title {
-                font-size: 1.6rem; /* Significantly smaller for print */
-                margin-bottom: 5mm; /* Significantly reduced margin */
-            }
-            .subtitle {
-                font-size: 0.8rem; /* Significantly smaller for print */
-                margin-bottom: 8mm; /* Significantly reduced margin */
-            }
-            ul {
-                margin-bottom: 3mm; /* Significantly reduced margin */
-            }
-            li {
-                margin-bottom: 5mm; /* Significantly reduced margin */
-                page-break-inside: avoid; /* Crucial: prevent content within a li from breaking */
-            }
-            /* Force a page break after the 'Packaging & Presentation' section */
-            li:nth-of-type(2) { /* This targets the second <li>, which is 'Packaging & Presentation' */
-                page-break-after: always;
-            }
-            li strong {
-                font-size: 0.9em; /* Significantly smaller for print */
-                margin-bottom: 3mm; /* Significantly reduced margin */
-                border-bottom: none;
-            }
-            ul li ul {
-                padding: 3mm 3mm 3mm 6mm; /* Significantly reduced padding for print */
-                margin-top: 3mm; /* Significantly reduced margin */
-                background-color: #FDFBF8;
-                border: 1px solid #F8E6DD;
-            }
-            ul li ul li {
-                font-size: 0.75em; /* Significantly smaller for print */
-                margin-bottom: 1.5mm; /* Significantly reduced margin */
-            }
-            ul li ul li:last-child {
-                margin-bottom: 0;
-            }
-            .section-divider {
-                margin: 8mm 0; /* Significantly reduced margin */
-                page-break-before: auto;
-                page-break-after: auto;
-            }
-            .packaging-option {
-                padding: 6mm; /* Significantly reduced padding for print */
-                margin-bottom: 6mm; /* Significantly reduced margin */
-                page-break-inside: avoid; /* Ensure packaging options stay together */
-            }
-            .packaging-option strong {
-                font-size: 0.8em; /* Significantly smaller for print */
-                margin-bottom: 3mm; /* Significantly reduced margin */
-            }
-            .packaging-option p {
-                margin-bottom: 3mm; /* Significantly reduced margin */
-            }
-            .packaging-images {
-                gap: 3mm; /* Significantly reduced gap for print */
-                margin-top: 3mm; /* Significantly reduced margin */
-            }
-            .packaging-images img {
-                flex-basis: 60px; /* Significantly smaller for print */
-                max-width: 90px; /* Significantly smaller for print */
-                box-shadow: none;
-            }
-            .print-button {
-                display: none;
-            }
-        }
+        /* Removed all @media print specific rules to revert to default browser print behavior */
     </style>
 </head>
 <body>
